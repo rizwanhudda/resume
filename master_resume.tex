@@ -1,0 +1,425 @@
+% Andrew McNabb's Resume
+% Created: 7 Jan 2004
+% Last Modified: 17 Jul 2004
+
+%
+% Adapted by: Rizwan Aziz Hudda
+%
+
+\documentclass[11pt,oneside]{article}
+\usepackage{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+
+\pagestyle{empty}
+\geometry{letterpaper,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in,headheight=0in,headsep=0in,footskip=.3in}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0in}
+\setlength{\itemsep}{0in}
+\setlength{\topsep}{0in}
+\setlength{\tabcolsep}{0in}
+
+% Name and contact information
+\newcommand{\name}{Rizwan Aziz Hudda}
+\newcommand{\curaddr}{I213, Hall-7, IIT Kanpur, Kanpur - 208016, Uttar Pradesh}
+\newcommand{\phone}{(91) 8853145973}
+\newcommand{\email}{hudda@cse.iitk.ac.in}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New commands and environments
+
+% This defines how the name looks
+\newcommand{\bigname}[1]{
+	\begin{center}\fontfamily{phv}\selectfont\Huge\scshape#1\end{center}
+}
+
+% A ressection is a main section (<H1>Section</H1>)
+\newenvironment{ressection}[1]{
+	\vspace{4pt}
+	{\fontfamily{phv}\selectfont\Large#1}
+	\begin{itemize}
+	\vspace{3pt}
+}{
+	\end{itemize}
+}
+
+% A resitem is a simple list element in a ressection (first level)
+\newcommand{\resitem}[1]{
+	\vspace{-4pt}
+	\item \begin{flushleft} #1 \end{flushleft}
+}
+
+% A ressubitem is a simple list element in anything but a ressection (second level)
+\newcommand{\ressubitem}[1]{
+	\vspace{-1pt}
+	\item \begin{flushleft} #1 \end{flushleft}
+}
+
+% A resbigitem is a complex list element for stuff like jobs and education:
+%  Arg 1: Name of company or university
+%  Arg 2: Location
+%  Arg 3: Title and/or date range
+\newcommand{\resbigitem}[3]{
+	\vspace{-5pt}
+	\item
+	\textbf{#1}---#2 \\
+	\textit{#3}
+}
+
+% This is a list that comes with a resbigitem
+\newenvironment{ressubsec}[3]{
+	\resbigitem{#1}{#2}{#3}
+	\vspace{-2pt}
+	\begin{itemize}
+}{
+	\end{itemize}
+}
+
+% This is a simple sublist
+\newenvironment{reslist}[1]{
+	\resitem{\textbf{#1}}
+	\vspace{-5pt}
+	\begin{itemize}
+}{
+	\end{itemize}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Now for the actual document:
+
+\begin{document}
+
+\fontfamily{ppl} \selectfont
+
+% Name with horizontal rule
+\bigname{\name}
+
+\vspace{-8pt} \rule{\textwidth}{1pt}
+
+\vspace{-1pt} {\small\itshape \curaddr \hfill \phone; \email}
+
+\vspace{8 pt}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Education}
+
+	\begin{ressubsec}{Indian Institute Of Technology, Kanpur}{Kanpur, UP}{MTech  CSE: July 2011 - Current }
+		\ressubitem{GPA: 9.0/10}
+		\ressubitem{Projected Graduation Date: June, 2013}
+	\end{ressubsec}
+		  
+	\begin{ressubsec}{Birla Institute Of Technology and Science}{Pilani, RJ}{BE (Hons.) CSE : August 2006 - May 2010 }
+		\ressubitem{GPA: 8.03/10}
+	\end{ressubsec}
+
+	\begin{ressubsec}{Sri Chaitanya Junior College}{Hyderabad, AP}{June 2004 - Mar 2006}
+		\ressubitem{XII Board Marks: 95.6\%}
+		\ressubitem{Subjects: Mathematics, Physics, Chemistry, English, Sanskrit}
+	\end{ressubsec}
+	      
+	\begin{ressubsec}{Little Star High School}{Adilabad, AP}{June  1992 - Mar 2004}
+		\ressubitem{X Board Marks: 89.6\%}
+	\end{ressubsec}
+\end{ressection}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Academic Acheivements}
+
+	\resitem{Acheived All India Rank of \textit{46} among ~100,000 students Appearing for GATE Computer Science Test in India.}
+
+	\resitem{Acheived All India Rank of \textit{380} among ~500,000 students Appearing for AIEEE in india.}
+
+	\resitem{Acheived State Rank of \textit{25} among ~200,000 students Appearing for Engineering Entrance Test EAMCET in AP.}
+
+\end{ressection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{MTech Thesis}
+    
+  \resitem{\textit{Advisor: Dr. Surender Baswana}}
+  \resitem{Design of Efficient Dynamic and Static Maximum matching algorithms for Planar Graphs.}
+  
+\end{ressection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Work Experience}
+
+	\begin{ressubsec}{Indian Institute of Technology Kanpur}{Kanpur, UP}{Teaching Assistant: July 2011--present}
+		\ressubitem{ESc 101-Freshman Programming course in C, grading and assisting students in the Lab}
+		\ressubitem{Theory of Computation-Grading of assignments, exams}
+	\end{ressubsec}
+
+	\begin{ressubsec}{D.E.Shaw India Software Pvt. Ltd}{Hyderabad, AP}{Member Technical: July 2010 -- June 2011}
+		\ressubitem{Was Member of Technical team that develops infrastructure for Energy Trading Group.}
+		\begin{reslist}{Key Projects}
+		    \ressubitem{Worked on Data extraction from Simple, Form based and Javascript based websites, FTP sites.}
+		    \ressubitem{Made Enhancements to Backend Infrastructure for Book Keeping and Grouping of PnL.}
+		    \ressubitem{Worked on Backend Python and Excel VBA Based sheet for Historical Beta computation and display.}
+		\end{reslist}
+		\ressubitem{\textbf{Technologies Used:} Python, Perl, CVS, SVN, Java, Firebug, Selenium, Bash, Cron, Sybase, T-SQL}
+	\end{ressubsec}
+
+	\begin{ressubsec}{Qualcomm India R \& D Pvt. Ltd}{Hyderabad, AP}{Engineer Intern: July 2009 -- Dec 2009}
+		\begin{reslist}{Dependency Analyser tool}
+		    \ressubitem{Aimed to reduce build time of the drivers codebase for embedded device.}
+		    \ressubitem{Analyses the depedencies between different source files by looking at include's.}
+		    \ressubitem{Finally gives recommendations by marking redundant inclusions in the graph.}
+		    \ressubitem{Also useful to reduce intermodule dependencies.}
+		\end{reslist}
+		    
+		\ressubitem{Tool to Reverse Engineer data structures from memory dump.}
+		\ressubitem{Unit Test framework and Test cases for Storage SD Card Driver.}
+		
+		\ressubitem{\textbf{Technologies Used:} Perl, C, Graphviz, Dot}
+	\end{ressubsec}
+
+	\begin{ressubsec}{Mormugao Port Trust}{Vasco, Goa}{Engineer Intern: May 2008 -- July 2008}
+	    \ressubitem{Developed Library Management System}
+		
+	     \begin{reslist}{Key Features}
+
+		    \ressubitem{Add/remove Books from the List.}
+		    \ressubitem{Issue/Returns and search for Books.}
+		    \ressubitem{Generate a list of Books which are overdue in a date range.}
+
+	     \end{reslist}
+		
+		\ressubitem{\textbf{Technologies Used:} C\#, MS Access, Crystal Reports, SQL}
+	\end{ressubsec}
+\end{ressection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Key Academic Projects}
+
+  \begin{ressubsec}{\textit{Term paper} on Shortest Path between two points of intersection}{IIT Kanpur}{Feb 2012 - April 2012}
+   \ressubitem{Given a set of $n$ line segments and two points of intersection s and t we need to find shortest path between them.}
+   \ressubitem{Presentation of the paper which solves this in $O(n + k^2)$ where $k$ is the no. of different slopes of line segments.}
+   \ressubitem{Posed an open problem which is closely related to Travelling salesman problem in geometric setting. }
+  \end{ressubsec}
+
+
+  \begin{ressubsec}{\textit{Term paper} on Unique Games Conjecture and its applications}{IIT Kanpur}{Feb 2012 - April 2012}
+   \ressubitem{Study of survey papers by Luca Trevisan, Subhash Khot and in class presentation.}
+  \end{ressubsec}
+
+  \begin{ressubsec}{Implementation of Efficient Computational Geometry routines}{IIT Kanpur}{Jan 2012 - Feb 2012}
+   \ressubitem{Line Sweep Algorithm for finding points of intersections of a set of $n$ line segments.}
+   \ressubitem{n-dimensional Range Tree for efficiently searching the points in a range.}
+  \end{ressubsec}
+
+  \begin{ressubsec}{Randomised Algorithm for Minimum Enclosing Circle Problem}{IIT Kanpur}{Oct 2011 - Nov 2011}
+    
+    \ressubitem{ Implementation of the Linear time Randomised Algorithm for MEC Problem. }
+    \ressubitem{ Experimental evaluation to estimate the running time as a function of input. }
+    \ressubitem{ Brute force Checker and Visualizer to see the progress of algorithm. }
+    \ressubitem{ LEDA C++ Library for Common Geometry Routines.}
+  \end{ressubsec}
+
+  \begin{ressubsec}{Stock Price Prediction using Sentiment Analysis}{IIT Kanpur}{Aug 2011 - Nov 2011}
+    
+    \ressubitem{ Extraction of Stock Price Information from Yahoo! Finance for 20 BSE Listed Companies.}
+    \ressubitem{ Extraction of Tweets data from Otter and Aggregating it into daily file.  }
+    \ressubitem{ Use Calls to Alchemy API for getting sentiment scores for tweets. }
+    \ressubitem{ Use Linear Regression Based on sentiment scores and some other parameters to predict the price.}
+    \ressubitem{ We were able to predict the prices with directional accuracy of ~60\%.}
+    \ressubitem{ Used \textit{Python} for Scripting and \textit{MatLab} for Implementing Machine Learning Models.}
+
+  \end{ressubsec}  
+
+  \begin{ressubsec}{Compiler for object oriented toy language Dolly}{BITS, Pilani}{Jan 2009 - April 2009}
+  
+      \resitem{Developed code for Lexical analysis, Parsing, Semantic Analysis, Type Checking, and Abstract Syntax Tree Generation.}
+      
+  \end{ressubsec}
+
+  \begin{ressubsec}{Energy Efficient Area Coverage in Wireless Sensor Networks}{BITS, Pilani}{Jan 2010 - April 2010}
+  
+    \resitem{Study of Distributed Algorithms for the problem in Adhoc WSNs.}
+    \resitem{Compared the other approaches with the one based on Game Theory.}
+  
+  \end{ressubsec}
+
+  \begin{ressubsec}{Implementation Of RDBMS in C}{BITS, Pilani}{Jan 2009 - April 2009}
+  
+    \begin{reslist}{Key Features}
+     
+	\ressubitem{Design of file storage for the relational schema and data.}
+	\ressubitem{Implementation of 5 Basic Relational Operations Set Union, Cross Product, Selection, Projection, Set Difference. }
+	\ressubitem{Command line interface to input SQL Like commands.}
+
+    \end{reslist}
+
+  \end{ressubsec}
+
+
+\end{ressection}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Relevant Courses}
+
+\begin{reslist}{Masters}
+
+ \ressubitem{Mathematics for CSE and  Algorithms}
+ \ressubitem{Topics in Design and Analysis of Algorithms}
+ \ressubitem{Machine Learning}
+ \ressubitem{Randomised Algorithms}
+ \ressubitem{Computational Geometry}
+ \ressubitem{Computational Complexity}
+
+\end{reslist}
+
+\begin{reslist}{Bachelors}
+
+ \ressubitem{C Programming I and II}
+ \ressubitem{Microprocessors and Hardware Interfacing}
+ \ressubitem{Discrete Mathematics}
+ \ressubitem{Data Structures and Algorithms}
+ \ressubitem{Operating Systems}
+ \ressubitem{Theory Of Computation}
+ \ressubitem{Programming Languages and Compiler Construction}
+ \ressubitem{Computer Networks}
+ \ressubitem{Database Systems}
+ \ressubitem{Advanced Computer Organization}
+ \ressubitem{Digital Electronics and Intro to Computer Organization}
+ \ressubitem{Artificial Intelligence}
+ \ressubitem{Object Oriented Programming}
+ \ressubitem{Data Mining}
+ \ressubitem{Advanced Algorithms}
+ \ressubitem{Data Communication Networks}
+ \ressubitem{Technical Report Writing}
+ \ressubitem{Numerical Analysis}
+ \ressubitem{Optimisation I \& II}
+
+\end{reslist}
+ 
+\end{ressection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Acheivements}
+
+\resitem{Winner of Yahoo!'s HackU, a 24 hours application development challenge held at IIT Kanpur in August 2012}
+\resitem{Ranked \textit{$9^{th}$} among Indian coders in \textit{Codechef August 2012} Algorithm Challenge.}
+\resitem{Ranked \textit{$15^{th}$} among Indian coders in \textit{Codechef June 2012} Algorithm Challenge.}
+\resitem{Ranked \textit{$10^{th}$} among Indian coders in \textit{Codechef March 2012} Algorithm Challenge.}
+\resitem{Ranked \textit{$11^{th}$} among Global and $3^{rd}$ among Indian teams in \textit{IOPC 2012}. }
+\resitem{Ranked \textit{$8^{th}$} among Indian teams in \textit{Bitwise 2012} - Algorithm Intensive Programming Contest.}
+\resitem{Ranked \textit{$4^{th}$} in Insomnia Programing Contest in \textit{Feb 2012}. }
+\resitem{Ranked \textit{$6^{th}$} among Indian coders in \textit{Codechef February 2012} Algorithm Challenge.}
+\resitem{Awarded Prize Money of \textit{\$100} by imo.im for advancing till final round of interviews for summer internship in Dec 2011.}
+\resitem{Ranked \textit{$7^{th}$} among Indian coders in Codechef June 2010 Algorithm Challenge.}
+\resitem{Among Top 13\% of the Programmers in \textit{Google CodeJam} in 2010, 2011, and 2012.}
+\resitem{Rating 1406 (Blue) in \textit{Topcoder} and Ranked \textit{$61^{th}$} Among Indian Coders in SRMs.}
+\resitem{World rank in \textit{Top 250} of Sphere Online Judge.}
+\resitem{Advanced Till PreFinal Round of FaceBook Hacker Cup 2011.}
+\resitem{Ranked \textit{$3^{rd}$} in ACM West India Provincials 2009 and 2010.}
+\resitem{Ranked \textit{$3^{rd}$} In Checkmate Held during \textit{Apogee 2010}. }
+\resitem{Ranked \textit{$27^{th}$} in \textit{ACM ICPC Regionals 2009} Amritapuri.}
+
+\end{ressection}
+
+\begin{ressection}{Extra Curricular}
+ \resitem{Volunteer during InterCollege Cultural Fest \textit{Oasis 2006}.}
+ \resitem{Volunteer during Technical Fest \textit{Apogee 2007}.}
+ \resitem{Attended Workshop on \textit{Geometric Computation and Algorithms} in \textit{Jan 2009} at BITS, Pilani.}
+ \resitem{Gave Lectures in ACM Training Camp organised by ACA, IIT Kanpur during \textit{Oct 1-8 2011}.}
+ \resitem{Mentored a Project on solving Travelling Salesman Problem using Heuristics for First Year Students at IITK.}
+ \resitem{Attended Workshop on \textit{Recent Advances in Data Structures and Algorithms} in \textit{Dec 2011} at IMSc, Chennai.}
+\end{ressection}
+
+\begin{ressection}{Positions of Responsibility}
+ \resitem{Project Forum Incharge, CSA for Academic year \textit{2008-09}}
+ \resitem{Programming Club PG Mentor, \textit{April 2011-Present} }
+\end{ressection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Skills}
+
+	\begin{reslist}{Programming Languages:}
+
+		\ressubitem{Proficient in C, C++, Python}
+
+		\ressubitem{Familiar with Java, Haskell, Bash, Perl, T-SQL, \LaTeX }
+
+	\end{reslist}
+
+	\begin{reslist}{Development Environments:}
+
+	      \ressubitem{Code::Blocks, Devcpp, Vim, Gedit, Notepad++}
+
+	\end{reslist}
+
+	\begin{reslist}{Databases:}
+	    
+	      \ressubitem{Sybase 11, Microsoft SQL Server 2008, T-SQL}
+
+	\end{reslist}
+
+	\begin{reslist}{Tools and Packages:}
+
+		\ressubitem{Familiar with Cron, CVS, SVN, gdb, Make, IPython}
+
+	\end{reslist}
+
+	\resitem{\textbf{Operating Systems:} Linux (Ubuntu, Debian, Fedora), Windows XP/Vista/7}
+
+\end{ressection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Miscellaneous}
+
+ \begin{reslist}{Profiles at Online Programming Portals}
+    \ressubitem{ Topcoder handle: \href{http://community.topcoder.com/tc?module=MemberProfile&cr=22694712}{rizwanhudda} }
+    \ressubitem{ Codechef handle: \href{http://codechef.com/users/rizwanhudda}{rizwanhudda} }
+    \ressubitem{ Codeforces handle: \href{http://codeforces.com/profile/rizwanhudda}{rizwanhudda} }
+    \ressubitem{ Spoj handle: \href{http://spoj.pl/users/rizwanhudda}{rizwanhudda} }
+ \end{reslist}
+
+\end{ressection}
+
+\begin{ressection}{Other Projects}
+
+  \begin{reslist}{BITS Lan Chat Client}
+
+    \ressubitem{Implemented Voice, and text chat feature.}
+    \ressubitem{Multithreaded to allow multiple chat windows.}
+    \ressubitem{Used a Server-Client Model and it Support Web based client as well.}
+    \ressubitem{\textbf{Technologies Used:} Java, MySQL, PHP, Apache, Netbeans}
+
+  \end{reslist}
+  
+  \begin{reslist}{LAN Based Group Chat Client}
+  
+    \ressubitem{Follows Server-Client Model, uses Async Sockets for Communication.}
+    \ressubitem{\textbf{Technologies Used:} C\#.Net, Visual Studio 2005 }
+  
+  \end{reslist}
+
+  \begin{reslist}{Implementation of Routing Algorithm in User Space}
+      
+    \ressubitem{Simulated the Routing Algorithm using Multiple Threads.}
+    \ressubitem{Each Thread represents a node in the network and is assigned different ports.}
+    \ressubitem{Shortest Distance Vector Protocol was simulated.}
+    \ressubitem{\textbf{Technologies Used:} Java, Sockets }
+
+  \end{reslist}
+
+  \begin{reslist}{Power aware compiler optimisation algorithms}
+
+    \ressubitem{Study of various techniques for Compiler optimisation.}
+    \ressubitem{Implemented a LP Based Power aware compiler optimisation scheme in C++.}
+
+  \end{reslist}
+
+\end{ressection}
+
+
+\end{document}
